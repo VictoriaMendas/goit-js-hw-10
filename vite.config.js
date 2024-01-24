@@ -16,6 +16,7 @@ export default defineConfig(({ command }) => {
         input: glob.sync('./src/*.html'),
         output: {
           manualChunks(id) {
+            console.log(id);
             if (id.includes('node_modules')) {
               return 'vendor';
             }
